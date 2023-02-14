@@ -8,20 +8,24 @@
     <title>Avaluación Intermedia Cristina</title>
 </head>
 <body>
-    <h1 class="title">Adivina el número</h1>
-    <form action="#" class="form">
-        <label for="" class="text" id="inputNumber">
-            Introduce aquí tu número:
-            <input type="text" name="inputNumber" id="inputNumber" class="inputNumber js-inputNumber">
-        </label>
-        <input type="submit" class="btn js-btn" value="prueba">
-    </form>
-    <div class="container">
-        <p class="text js-clue">Pista: Escribe el número y dale a Prueba</p>
-    </div>
-    <div class="container">
-        <p class="text">Número de intentos: <span class="attempts js-attempts"></span></p>
-    </div>
+    <header class="headerContainer">
+      <h1 class="title">Adivina el número</h1>
+    </header>
+    <main class="mainContainer">
+        <form action="#" class="form">
+            <label for="" class="text" id="inputNumber">
+                Introduce aquí tu número:
+                <input type="text" name="inputNumber" id="inputNumber" class="inputNumber js-inputNumber">
+            </label>
+            <input type="submit" class="btn js-btn" value="prueba">
+        </form>
+        <div class="textContainer">
+            <p class="text js-clue">Pista: Escribe el número y dale a Prueba</p>
+        </div>
+        <div class="textContainer">
+            <p class="text">Número de intentos: <span class="attempts js-attempts"></span></p>
+        </div>
+    </main>
     <script src="./js/main.js"></script>
 </body>
 </html>

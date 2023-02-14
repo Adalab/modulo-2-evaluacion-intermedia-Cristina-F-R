@@ -12,28 +12,25 @@ function getRandomNumber(max) {
 const randomNumber = getRandomNumber(100);
 console.log('Tu número aleatorio es: '+ randomNumber);
 
+
 handleclick = (e) =>{
     e.preventDefault();
-    // let inputValue = input.value;
-    // console.log(inputValue);
     comparison();
     counterAttempts();
 }
 
+
 function comparison() {
     let inputValue = parseInt(input.value);
-    if(inputValue > 100 || inputValue < 0){
-       clue.innerHTML = 'El número debe estar entre 1 y 100.' 
-    }if (inputValue === randomNumber){
+    if (inputValue === randomNumber){
         clue.innerHTML = 'Has ganado campeona!!!';
-    }if (inputValue > randomNumber){
+    }if (inputValue > randomNumber && inputValue < 101){
         clue.innerHTML = 'Demasiado alto';
-    }if (inputValue < randomNumber){
+    }if (inputValue < randomNumber && inputValue >-1){
         clue.innerHTML = 'Demasiado bajo';
-    }else{
-        console.log('error');
-    }
-}
+    }if(inputValue > 100 || inputValue < 0){
+       clue.innerHTML = 'El número debe estar entre 1 y 100.';
+}}
 
 function counterAttempts(){
     count++;
