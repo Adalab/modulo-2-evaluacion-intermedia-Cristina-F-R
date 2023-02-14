@@ -20,7 +20,7 @@ handleclick = (e) =>{
 }
 
 
-function comparison() {
+const comparison = () =>{
     let inputValue = parseInt(input.value);
     if (inputValue === randomNumber){
         clue.innerHTML = 'Has ganado campeona!!!';
@@ -32,7 +32,7 @@ function comparison() {
        clue.innerHTML = 'El número debe estar entre 1 y 100.';
 }}
 
-function counterAttempts(){
+const counterAttempts = () =>{
     count++;
     attempts.innerHTML = count;
 }
