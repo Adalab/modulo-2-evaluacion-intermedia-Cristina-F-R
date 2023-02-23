@@ -5,7 +5,7 @@ const input = document.querySelector('.js-inputNumber');
 const attempts = document.querySelector('.js-attempts');
 const clue = document.querySelector('.js-clue');
 let count = 0;
-
+let text = ''; 
 
 function getRandomNumber(max) {
  return Math.ceil(Math.random() * max);
@@ -21,7 +21,7 @@ function handleclick (e) {
     counterAttempts();
 }
 
-let text = ''; 
+
 function render(text) {
   clue.innerHTML = text;
 }
