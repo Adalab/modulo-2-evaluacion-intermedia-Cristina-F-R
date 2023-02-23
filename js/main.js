@@ -1,3 +1,5 @@
+'use strict';
+
 const btn = document.querySelector('.js-btn');
 const input = document.querySelector('.js-inputNumber');
 const attempts = document.querySelector('.js-attempts');
@@ -13,24 +15,32 @@ const randomNumber = getRandomNumber(100);
 console.log('Tu número aleatorio es: '+ randomNumber);
 
 
-handleclick = (e) =>{
+function handleclick (e) {
     e.preventDefault();
     comparison();
     counterAttempts();
 }
 
+let text = ''; 
+function render(text) {
+  clue.innerHTML = text;
+}
 
 const comparison = () =>{
-    let inputValue = parseInt(input.value);
-    if (inputValue === randomNumber){
-        clue.innerHTML = 'Has ganado campeona!!!';
-    }if (inputValue > randomNumber && inputValue < 101){
-        clue.innerHTML = 'Demasiado alto';
-    }if (inputValue < randomNumber && inputValue >-1){
-        clue.innerHTML = 'Demasiado bajo';
-    }if(inputValue > 100 || inputValue < 0){
-       clue.innerHTML = 'El número debe estar entre 1 y 100.';
-}}
+    let inputValue = input.value;
+    if(inputValue.length === 0){
+        render('Debes escribir un número')
+    }else{
+    if (parseInt(inputValue) === randomNumber){
+        render('Has ganado campeona!!!');
+    }else if(parseInt(inputValue) > randomNumber && inputValue < 101){
+       render('Demasiado alto');
+    }else if (parseInt(inputValue) < randomNumber && inputValue >-1){
+        render('Demasiado bajo');
+    }else {
+        parseInt(inputValue)
+       render('El número debe estar entre 1 y 100.');
+}}};
 
 const counterAttempts = () =>{
     count++;
